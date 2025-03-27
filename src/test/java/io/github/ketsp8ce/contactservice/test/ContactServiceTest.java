@@ -1,10 +1,10 @@
 package io.github.ketsp8ce.contactservice.test;
 
-//Author Name: 
+//Author Name: hunter Marx
 
-//Date: 
+//Date: 03/27/2025
 
-//Course ID: 
+//Course ID: CS32010813-M01
 
 //Description: This is the unit tests for the contact service (ContactServiceTest)
 
