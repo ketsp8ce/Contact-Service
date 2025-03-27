@@ -1,47 +1,46 @@
+//Author Name:
 
+//Date: 
+
+//Course ID: 
+
+//Description: This is the unit tests for the contact class (ContactTest).
 
 package io.github.ketsp8ce.contactservice.test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.*;
 
-import io.github.ketsp8ce.contactservice.Contact;
-
-class ContactTest {
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	void testFirstNameTooLong() {
-		Assertions.assertThrows(IllegalArgumentException.class, () -> {
-			new Contact ("xxxxxx", "Carina", "Morjan", "3333333333", "888 ooga booga");
-		});
-	}
-
-}
-
+public class ContactTest {
 /*
-//unit tests for contact
-package io.github.ketsp8ce.contactservice;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-	class ContactTest {
-	
-	@Test
-	void testContactTest(){
-		ContactTest contactTest = new ContactTest("xxxxxx", "Hunter", "Marx", "8088888888", "111 1rst St");
-		assertTrue(Contact.getContactId().equals("xxxxxx"));
-		assertTrue(Contact.getFirstName().equals("Hunter"));
-		assertTrue(Contact.getLastName().equals("Marx"));
-		assertTrue(Contact.getPhone().equals("8088888888"));
-		assertTrue(Contact.getAddress().equals("111 1rst St"));
-		
-	}
-
-}
+* The following tests exercise the Contact class.
+* The first 5 tests to make sure the field does not become longer than the constraint
+* (10 characters for first and last name, exactly 10 characters for phone number,
+* and 30 characters for the address).
+* The last 4 tests ensure that each field is not null.
+* ContactID is not tested for being not null because there isn't a way to create
+* a contact with a null contactID. Likewise it is not tested for being non-updateable
+* because there is no way to update it.
 */
+@Test
+@DisplayName("Contact ID cannot have more than 10 characters")
+void testContactIDWithMoreThanTenCharacters() {
+Contact contact = new Contact("FirstName","LastName","PhoneNumbr","Address");
+if(contact.getContactID().length() > 10) {
+fail("Contact ID has more than 10 characters.");
+}
+}
+
+@Test
+@DisplayName("Contact First Name cannot have more than 10 characters")
+void testContactFirstNameWithMoreThanTenCharacters() {
+Contact contact = new Contact("OllyOllyOxenFree","LastName","PhoneNumbr","Address");
+if(contact.getFirstName().length() > 10) {
+fail("First Name has more than 10 characters.");
+}
+}
+
+// Now it's your turn to finish creating the code 
+
