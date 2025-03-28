@@ -20,22 +20,7 @@ private String address;
 private static AtomicLong idGenerator = new AtomicLong();
 
 //CONSTRUCTOR
-/*
-* The constructor takes first name, last name, phone number, and address as parameters.
-* The first thing it does is generates a new ID for the contactID field.
-*
-* First name and last name are checked for null condition or blank fields. If either of
-* those conditions exist, fill in the field with the phrase "NULL" so that something exists
-* to protect data integrity while making it clear it is a placeholder.
-* In both cases, if the first or last name is greater than 10 characters, truncate it
-* so that only the first 10 characters are used.
-*
-* For the number field, if the phone number is not exactly 10 characters then fill it with
-* the placeholder '5555555555'.
-*
-* Address is like first and last names. If it is blank or null, set it to "NULL".
-* If it is more than 30 characters, truncate to the first 30 characters.
-*/
+
 public Contact(String firstName, String lastName, String number, String address)  {
 	
 //CONTACTID
